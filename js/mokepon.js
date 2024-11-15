@@ -1,9 +1,11 @@
+// inicio del juego
 function iniciarJuego(){
     let botonMascotaJugador = document.getElementById('boton-mascota')
-    botonMascotaJugador.addEventListener('click', seleccionarMascoraJuagador)
+    botonMascotaJugador.addEventListener('click', seleccionarMascotaJuagador)
 }
 
-function seleccionarMascoraJuagador(){
+// seleccion de nuestra mascota
+function seleccionarMascotaJuagador(){
     let inputHipodogue = document.getElementById('hipodoge')//.getElementById es un metodo que nos permite acceder a un elemento del DOM
     let inputCapipepo = document.getElementById('capipepo')
     let inputRatigueya = document.getElementById('ratigueya')
@@ -19,9 +21,10 @@ function seleccionarMascoraJuagador(){
         alert('No has seleccionado una mascota')
     }
 
-    seleccionarMascoraEnemigo()
+    seleccionarMascotaEnemigo()
 }
-function seleccionarMascoraEnemigo(){
+// seleccion de la mascota del enemigo
+function seleccionarMascotaEnemigo(){
     let ataqueAleatorio = aleatorio(1,3)
     let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
 
@@ -33,8 +36,10 @@ function seleccionarMascoraEnemigo(){
         spanMascotaEnemigo.innerHTML = 'Ratigueya'
     }
 }
+
+//Eleccion del pc
 function aleatorio(min, max){
     return Math.floor( Math.random() * (max - min + 1) + min)
 }
 
-window.addEventListener('load', iniciarJuego)
+window.addEventListener('load', iniciarJuego)//cargar el documento HTML primero y despues llama la funcion 'iniciarJuego'
