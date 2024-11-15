@@ -1,7 +1,35 @@
+let ataqueJugador; // variable global
+
+function ataqueFuego(){
+    let botonFuego = document.getElementById('boton-fuego');
+    botonFuego.addEventListener('click', ataqueFuego);
+    
+    ataqueJugador = 'Fuego';
+}
+function ataqueAgua(){
+    let botonAgua = document.getElementById('boton-agua');
+    botonAgua.addEventListener('click', ataqueAgua);
+
+    ataqueJugador = 'Agua';
+}
+
+function ataqueTierra(){
+    let botonTierra = document.getElementById('boton-tierra');
+    botonTierra.addEventListener('click', ataqueTierra);
+
+    ataqueJugador = "Tierra";
+}
+
+    
 // inicio del juego
 function iniciarJuego(){
     let botonMascotaJugador = document.getElementById('boton-mascota')
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJuagador)
+
+    ataqueFuego();
+    ataqueAgua();
+    ataqueTierra();
+    
 }
 
 // seleccion de nuestra mascota
@@ -29,7 +57,7 @@ function seleccionarMascotaEnemigo(){
     let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
 
     if (ataqueAleatorio == 1){
-        spanMascotaEnemigo.innerHTML = 'Hipodogue'
+        spanMascotaEnemigo.innerHTML = 'Hipodogue' //.innerHTML
     } else if (ataqueAleatorio == 2){
         spanMascotaEnemigo.innerHTML = 'Capipepo'
     } else {
@@ -42,4 +70,5 @@ function aleatorio(min, max){
     return Math.floor( Math.random() * (max - min + 1) + min)
 }
 
-window.addEventListener('load', iniciarJuego)//cargar el documento HTML primero y despues llama la funcion 'iniciarJuego'
+window.addEventListener('load', iniciarJuego)//.addEventListener escucha eventos
+//cargar el documento HTML primero y despues llama la funcion 'iniciarJuego'
