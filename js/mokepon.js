@@ -1,10 +1,13 @@
 let ataqueJugador; // variable global
 let ataqueEnemigo;
+let vidasJugador = 3;
+let vidasEnemigo = 3;
 
 // inicio del juego
 function iniciarJuego(){
     let botonMascotaJugador = document.getElementById('boton-mascota')
-    botonMascotaJugador.addEventListener('click', seleccionarMascotaJuagador)
+    botonMascotaJugador.addEventListener('click', seleccionarMascotaJuagador);
+
     let botonFuego = document.getElementById('boton-fuego');
     botonFuego.addEventListener('click', ataqueFuego);
     let botonAgua = document.getElementById('boton-agua');
@@ -12,6 +15,8 @@ function iniciarJuego(){
     let botonTierra = document.getElementById('boton-tierra');
     botonTierra.addEventListener('click', ataqueTierra);
     
+    let botonReiniciar = document.getElementById('boton-reiniciar')
+    botonReiniciar.addEventListener('click', reiniciarJuego);
 }
 
 // seleccion de nuestra mascota
@@ -85,18 +90,35 @@ function ataqueAleatorioEnemigo(){
 
 //combate
 function combate(){
+        let spanVidasJugador = document.getElementById('vidas-jugador');
+        let spanVidasEnemigo = document.getElementById('vidas-enemigo');
+
         if ( ataqueEnemigo == ataqueJugador){
           crearMensaje("EMPATE!!!!!")
         } else if((ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra') || (ataqueJugador == 'Agua' && ataqueEnemigo == 'Fuego') || (ataqueJugador == 'Tierra' && ataqueEnemigo == 'Agua')){
           crearMensaje("GANASTE🎉!!!!!")
+          vidasEnemigo--
+          spanVidasEnemigo.innerHTML = vidasEnemigo
         } else {
-          crearMensaje("perdiste 🙁")
+          crearMensaje("PERDISTE🙁");
+          vidasJugador--
+          spanVidasJugador.innerHTML = vidasJugador
         }
+        revisarVidas()
     }
 
+function revisarVidas(){
+    if (vidasEnemigo == 0){
+        //GANASTE
+        crearMensajeFinal('has ganado la partida🎉!!!!!');
+    } else if(vidasJugador == 0){
+        //PERDISTE
+        crearMensajeFinal('has perdio la partida🙁');
+    }
+}
 // crear resultado del combate
 function crearMensaje(resultado){
-    let sectionMensaje = document.getElementById('mensaje')// se selecciona donde se quiere hubiacer el mensaje
+    let sectionMensaje = document.getElementById('mensaje');// se selecciona donde se quiere hubiacer el mensaje
     
     let parrafo = document.createElement('p'); //crea un elemento en el DOM en este caso se creo una etiqueta <p>
     parrafo.innerHTML = 'Tu mascota ataco con ' + ataqueJugador + ', las mascotas del enemigo atacó con ' + ataqueEnemigo + '-' +resultado;
@@ -104,6 +126,25 @@ function crearMensaje(resultado){
     sectionMensaje.appendChild(parrafo);//.appendChild crea el parrafo como si fuera hijo del <section>
 }
 
+function crearMensajeFinal(resultadoFinal){
+    let sectionMensaje = document.getElementById('mensaje');
+    
+    let parrafo = document.createElement('p');
+    parrafo.innerHTML = resultadoFinal
+
+    sectionMensaje.appendChild(parrafo);
+    let botonFuego = document.getElementById('boton-fuego');
+    botonFuego.disabled = true
+    let botonAgua = document.getElementById('boton-agua');
+    botonAgua.disabled = true
+    let botonTierra = document.getElementById('boton-tierra');
+    botonTierra.disabled = true
+}
+
+
+function reiniciarJuego(){
+    location.reload();//llocation.reload() funciona para recargar la localizacion de 
+}
 //Eleccion del pc
 function aleatorio(min, max){
     return Math.floor( Math.random() * (max - min + 1) + min)
