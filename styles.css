@@ -9,10 +9,15 @@
     box-sizing: border-box;/*se usa para que elementos mantengan su tamaño y no se rompa el estilos el estilo*/
 }
 body{
-    background-color: #72BF78;
+    background-image: url('./assents/fondo.png');
     font-family: "Protest Revolution", sans-serif;
     font-weight: 400;
     font-style: normal;
+    background-size: cover;
+
+}
+p {
+    margin-top: 10px;
 }
 
 #seleccionar-mascota{
@@ -21,36 +26,39 @@ body{
     justify-content: center;/*se centra el contendio (center)*/
     align-items: center; /*se centran los elementos del contenedor padre de manera transversal*/
 }
-.titulo{
+.titulo{ 
     font-family: "Jaro", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    color: white;/*color de la la letra*/
+    color: #1A120B;/*color de la la letra*/
+    margin-top: 25px;
+    font-size: 45px; /*tamaño de letra*/
     
 }
 .subtitulo{
-    color: white;
+    color: #1A120B;
     padding: 35px;
 }
 
 .etiqueta{
-    display: flex;
+    display: flex;/*es una propieda que nos ayuda a organizar o manipular mejor los elementos*/
 }
 
 .tarjeta-de-mokepon{
     width: 160px;/*ancho*/
-    height: 100px;/*alto*/
+    height: 180px;/*alto*/
     background-color: #FEFF9F;/*color de fondo*/
     padding: 10px;/*relleno*/
     margin: 10px;/*margen (separa las elementos uno de otro)*/
     border: 1px solid black;/*borde y se le asigna un color*/
     border-radius: 20px;/*redondeo de bordes*/
     display: flex;
-    align-items: center;
+    flex-direction: column;/*define que direccion va dirijido el flex*/
+    align-items: center;/*centra los elementos */
 }
 .tarjeta-de-mokepon img {
-    width: 80px;
+    width: 124px;
 }
 
 input{
@@ -68,5 +76,10 @@ button{
     margin-left: 5px;/*tamaño de la margen de la parte de la izquierda*/
     margin-right: 10px;/*tamaño de la margen de la parte parte de la deracha*/
     margin-bottom: 35px;/*tamaño de la margen de la parte de abajo*/
+    font-family: "Jaro", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
 }
 /*modelo de caja*/

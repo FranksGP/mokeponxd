@@ -59,7 +59,7 @@ function seleccionarMascotaEnemigo(){
     let spanMascotaEnemigo = document.getElementById('mascota-enemigo');
 
     if (mascotaAleatorio == 1){
-        spanMascotaEnemigo.innerHTML = 'Hipodogue'; //.innerHTML agrega el valor a la id de la etiquete nombreada, en este caso mascota-enemigo 
+        spanMascotaEnemigo.innerHTML = 'Hipodogue'; //.innerHTML agrega el valor a la id de la etiquete nombrada, en este caso mascota-enemigo 
     } else if (mascotaAleatorio == 2){
         spanMascotaEnemigo.innerHTML = 'Capipepo';
     } else {
