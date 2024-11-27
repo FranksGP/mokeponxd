@@ -7,28 +7,29 @@
         <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
-        <h1>MOKEPON! 🔥💧🌱</h1>
-
         <section id="seleccionar-mascota">
+            <h1 class="titulo">MOKEPON! 🔥💧🌱</h1>
+
             <h2>Elije tu mascota:</h2>
             
-        
-            <input type="radio" name="mascota" id="hipodoge"/>
-            <label for="hipodoge">Hipodoge</label>
+            <section class="etiqueta">
+                <label class="tarjeta-de-mokepon" for="hipodoge">Hipodoge</label>
+                <input type="radio" name="mascota" id="hipodoge"/>
+    
+                <label class="tarjeta-de-mokepon" for="capipepo">Capipepo</label>
+                <input type="radio"name="mascota" id="capipepo"/>
+    
+                <label class="tarjeta-de-mokepon" for="ratigueya">Ratigueya</label>
+                <input type="radio" name="mascota" id="ratigueya"/>
+            </section>
 
-            <input type="radio"name="mascota" id="capipepo"/>
-            <label for="capipepo">Capipepo</label>
-
-            <input type="radio" name="mascota" id="ratigueya"/>
-            <label for="ratigueya">Ratigueya</label>
-
-
-            
-            <button id="boton-mascota">Seleccionar</button>
+            <button id="boton-mascota">Continuar</button>    
         </section>
 
 
         <section id="seleccionar-ataque">
+            <h1 class="titulo">MOKEPON! 🔥💧🌱</h1>
+
             <h2>Elige tu ataque:</h2>
 
             <p><span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p><!--Ele contenedor espan general mente no tiene un valor semantico, pero es usado para dar stilos u atributos aislandola del texto-->

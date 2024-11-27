@@ -109,6 +109,7 @@ function combate(){
         } else if((ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra') || (ataqueJugador == 'Agua' && ataqueEnemigo == 'Fuego') || (ataqueJugador == 'Tierra' && ataqueEnemigo == 'Agua')){
           crearMensaje("GANASTE🎉!!!!!");
           vidasEnemigo--; // llama a la variable global vidasEnemigo y le resta 1
+          
           spanVidasEnemigo.innerHTML = vidasEnemigo; // llama a la variable y le asigna el nuevo valor de la variable global
         } else {
           crearMensaje("PERDISTE🙁");

@@ -1,0 +1,44 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;/*centra los texto*/
+    box-sizing: border-box;/*se usa para que elementos mantengan su tamaño y no se rompa el estilos el estilo*/
+}
+
+#seleccionar-mascota{
+    display: flex;
+    flex-direction: column;/*se selecciona la direccion del flex (colum)*/
+    justify-content: center;/*se centra el contendio (center)*/
+    align-items: center; /*se centran los elementos del contenedor padre de manera transversal*/
+}
+.titulo{
+    color: #ffff;/*color de la la letra*/
+    width: 325px;/*Ancho*/
+    height: 50px;/*alto*/
+    background-color: #7C00FE;/*color de fondo*/
+}
+
+.etiqueta{
+    display: flex;
+}
+
+.tarjeta-de-mokepon{
+    width: 100px;
+    height: 100px;
+    background-color: #F9E400;
+    padding: 10px;/*relleno*/
+    margin: 10px;/*margen (separa las elementos uno de otro)*/
+    border: 1px solid black;/*borde y se le asigna un color*/
+}
+input{
+    display: none; /*se vualve invisible */
+}
+
+button{
+    height: 45px;
+    width: 180px;
+    border: 1px solid #F5004F;
+    color: #F5004F;
+    background: #FFAF00;
+}
+/*modelo de caja*/
