@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Protest+Revolution&display=swap');
+
 
 *{
     margin: 0px;
@@ -7,11 +9,10 @@
     box-sizing: border-box;/*se usa para que elementos mantengan su tamaño y no se rompa el estilos el estilo*/
 }
 body{
-    font-family: "Jaro", sans-serif;
-    font-optical-sizing: auto;
+    background-color: #72BF78;
+    font-family: "Protest Revolution", sans-serif;
     font-weight: 400;
     font-style: normal;
-    background-color: #72BF78;
 }
 
 #seleccionar-mascota{
@@ -21,11 +22,16 @@ body{
     align-items: center; /*se centran los elementos del contenedor padre de manera transversal*/
 }
 .titulo{
+    font-family: "Jaro", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
     color: white;/*color de la la letra*/
     
 }
 .subtitulo{
     color: white;
+    padding: 35px;
 }
 
 .etiqueta{
@@ -46,6 +52,7 @@ body{
 .tarjeta-de-mokepon img {
     width: 80px;
 }
+
 input{
     display: none; /*se vualve invisible */
 }
@@ -57,5 +64,9 @@ button{
     color: #1A1A19;
     background: #FFE700;
     border-radius: 20px;/*redondeo de bordes*/
+    margin-top: 30px;/*tamaño de la margen de la parte arriba*/
+    margin-left: 5px;/*tamaño de la margen de la parte de la izquierda*/
+    margin-right: 10px;/*tamaño de la margen de la parte parte de la deracha*/
+    margin-bottom: 35px;/*tamaño de la margen de la parte de abajo*/
 }
 /*modelo de caja*/
