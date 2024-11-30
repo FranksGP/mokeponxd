@@ -33,7 +33,7 @@ function seleccionarMascotaJuagador(){
     sectionSeleccionarMascota.style.display = 'none';// desaparece la seleccion de mascotas
     
     let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque');
-    sectionSeleccionarAtaque.style.display = 'block'; //aparece la seleccion para seleccionar ataque 
+    sectionSeleccionarAtaque.style.display = 'flex'; //aparece la seleccion para seleccionar ataque 
     
     let inputHipodogue = document.getElementById('hipodoge');//.getElementById es un metodo que nos permite acceder a un elemento del DOM
     let inputCapipepo = document.getElementById('capipepo');
