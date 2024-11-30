@@ -10,8 +10,11 @@ function iniciarJuego(){
     let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque');
     sectionSeleccionarAtaque.style.display = 'none';// desaparese la seleccion de ataque.  
 
+     let sectionSeleccionarReiniciar = document.getElementById('reiniciar');
+    sectionSeleccionarReiniciar.style.display = 'none';// desaparese el boton reiniciar.
+
     let botonMascotaJugador = document.getElementById('boton-mascota');
-    botonMascotaJugador.addEventListener('click', seleccionarMascotaJuagador);// cuando haga click llame la funcion seleccionarMascotaJugador
+    botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador);// cuando haga click llame la funcion seleccionarMascotaJugador
 
     let botonFuego = document.getElementById('boton-fuego');
     botonFuego.addEventListener('click', ataqueFuego); // cuando haga click, llama la funcion ataqueFuego
@@ -20,15 +23,12 @@ function iniciarJuego(){
     let botonTierra = document.getElementById('boton-tierra');
     botonTierra.addEventListener('click', ataqueTierra); // cuando haga click, llama la funcion ataqueTierra
     
-    let sectionSeleccionarReiniciar = document.getElementById('reiniciar');
-    sectionSeleccionarReiniciar.style.display = 'none';// desaparese el boton reiniciar.
-
     let botonReiniciar = document.getElementById('boton-reiniciar');
     botonReiniciar.addEventListener('click', reiniciarJuego); // cuando haga click, llama la funcion reiniciarJuego
 }
 
 // seleccion de nuestra mascota
-function seleccionarMascotaJuagador(){
+function seleccionarMascotaJugador(){
     let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota');
     sectionSeleccionarMascota.style.display = 'none';// desaparece la seleccion de mascotas
     
@@ -130,23 +130,26 @@ function revisarVidas(){
 }
 // crear resultado del combate
 function crearMensaje(resultado){
-    let sectionMensaje = document.getElementById('mensaje');// se selecciona donde se quiere hubiacer el mensaje
-    
-    let parrafo = document.createElement('p'); //crea un elemento en el DOM en este caso se creo una etiqueta <p>
-    parrafo.innerHTML = 'Tu mascota ataco con ' + ataqueJugador + ', las mascotas del enemigo atacó con ' + ataqueEnemigo + '-' +resultado;
+    let sectionMensaje = document.getElementById('resultado');// se selecciona donde se quiere hubiacer el mensaje
+    let ataqueDelJugador = document.getElementsById('ataque-del-jugador');
+    let ataqueDelEnemigo = document.getElementsById('ataque-del-enemigo');
 
-    sectionMensaje.appendChild(parrafo);//.appendChild crea el parrafo como si fuera hijo del <section>
+    let nuevoAtaqueDelJugador = document.createElement('p'); //crea un elemento en el DOM en este caso se creo una etiqueta <p>
+    let nuevoAraqueDelEnemigo = document.createElement('p'); //crea un elemento en el DOM en este caso se creo una etiqueta <p>
+
+    sectionMensaje.innerHTML = resultado;
+    nuevoAtaqueDelJugador.innerHTML = ataqueJugador;
+    nuevoAraqueDelEnemigo.innerHTML = ataqueEnemigo;
+
+    ataqueDelJugador.appendChild(nuevoAtaqueDelJugador);//.appendChild crea el parrafo como si fuera hijo del <section>
+    ataqueDelEnemigo.appendChild(nuevoAraqueDelEnemigo);//.appendChild crea el parrafo como si fuera hijo del <section>
 }
 
 function crearMensajeFinal(resultadoFinal){
-    let sectionSeleccionarReiniciar = document.getElementById('reiniciar');
-    sectionSeleccionarReiniciar.style.display = 'block';
-    let sectionMensaje = document.getElementById('mensaje');
+   
+    let sectionMensaje = document.getElementById('resultado');
     
-    let parrafo = document.createElement('p');
-    parrafo.innerHTML = resultadoFinal
-
-    sectionMensaje.appendChild(parrafo);
+    sectionMensaje.innerHTML = resultadoFinal
 
     let botonFuego = document.getElementById('boton-fuego');
     botonFuego.disabled = true
@@ -155,7 +158,8 @@ function crearMensajeFinal(resultadoFinal){
     let botonTierra = document.getElementById('boton-tierra');
     botonTierra.disabled = true
     
-
+    let sectionSeleccionarReiniciar = document.getElementById('reiniciar');
+    sectionSeleccionarReiniciar.style.display = 'block';
 }
 
 

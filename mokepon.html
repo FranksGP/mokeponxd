@@ -13,26 +13,29 @@
             <h2 class="subtitulo">Elije tu mascota:</h2>
             
             <div class="etiqueta">
+
                 <label class="tarjeta-de-mokepon" for="hipodoge">
                     <p>hipodoge</p>
-                    <img src="./assents/mokepons_mokepon_hipodoge_attack.png" alt="hipodoge">
+                    <img src="./assets/mokepons_mokepon_hipodoge_attack.png" alt="hipodoge">
                 </label>
                 <input type="radio" name="mascota" id="hipodoge"/>
     
                 <label class="tarjeta-de-mokepon" for="capipepo">
                     <p>Capipepo</p>
-                    <img src="./assents/mokepons_mokepon_capipepo_attack.png" alt="capipepo">
+                    <img src="./assets/mokepons_mokepon_capipepo_attack.png" alt="capipepo">
                 </label>
                 <input type="radio"name="mascota" id="capipepo"/>
     
                 <label class="tarjeta-de-mokepon" for="ratigueya">
                     <p>Ratigueya</p>
-                    <img src="./assents/mokepons_mokepon_ratigueya_attack.png" alt="ratigueya">
+                    <img src="./assets/mokepons_mokepon_ratigueya_attack.png" alt="ratigueya">
                 </label>
                 <input type="radio" name="mascota" id="ratigueya"/>
+
             </div>
 
-            <button id="boton-mascota">Continuar</button>    
+            <button id="boton-mascota">Continuar</button>   
+
         </section>
 
 
@@ -42,28 +45,28 @@
             <h2 class="subtitulo">Elige tu ataque:</h2>
         
             <div>
+            
                 <button id="boton-fuego" class="boton-de-fuego">Fuego🔥</button>
                 <button id="boton-agua" class="boton-de-agua">Agua💧</button>
                 <button id="boton-tierra" class="boton-de-tierra">Tierra🌱</button>
+
             </div>    
         
-            <div>
-                <section id="mensaje">
-                </section>
-        
+            <div id="mensaje">
+
+                <div id="resultado">hola</div>
 
                 <section id="reiniciar">
                     <button id="boton-reiniciar">Reiniciar</button>
                 </section>
             </div>
-
-            <p><span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p><!--Ele contenedor espan general mente no tiene un valor semantico, pero es usado para dar stilos u atributos aislandola del texto-->
-            <p><span id="mascota-enemigo"></span> tiene <span id="vidas-enemigo">3</span> vidas</p>
-            
-           
+                
+            <div>
+                <div id="ataque-del-jugador"></div>
+                <div id="ataque-del-enemigo"></div>
+                <p><span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p><!--Ele contenedor espan general mente no tiene un valor semantico, pero es usado para dar stilos u atributos aislandola del texto-->
+                <p><span id="mascota-enemigo"></span> tiene <span id="vidas-enemigo">3</span> vidas</p>
+            </div>
         </section>
-
-        
-       
     </body>
 </html>

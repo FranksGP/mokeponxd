@@ -9,7 +9,7 @@
     box-sizing: border-box;/*se usa para que elementos mantengan su tamaño y no se rompa el estilos el estilo*/
 }
 body{
-    background-image: url('./assents/fondo.png');
+    background-image: url('./assets/fondo.png');
     font-family: "Protest Revolution", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -26,6 +26,7 @@ p {
     justify-content: center;/*se centra el contendio (center)*/
     align-items: center; /*se centran los elementos del contenedor padre de manera transversal*/
 }
+
 .titulo{ 
     font-family: "Jaro", sans-serif;
     font-optical-sizing: auto;
@@ -36,6 +37,7 @@ p {
     font-size: 45px; /*tamaño de letra*/
     
 }
+
 .subtitulo{
     color: #1A120B;
     padding: 35px;
