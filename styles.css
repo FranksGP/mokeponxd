@@ -10,14 +10,20 @@
 }
 body{
     background-image: url('./assets/fondo.png');
+    background-size: cover;
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Fija la imagen de fondo */
     font-family: "Protest Revolution", sans-serif;
     font-weight: 400;
     font-style: normal;
-    background-size: cover;
-
+    
 }
 p {
     margin-top: 10px;
+}
+
+img{
+    width: 124px;
 }
 
 #seleccionar-mascota{
@@ -46,6 +52,7 @@ p {
 
 .tarjetas{
     display: flex;/*es una propieda que nos ayuda a organizar o manipular mejor los elementos*/
+    gap: 10px;
 }
 
 .tarjeta-de-mokepon{
@@ -61,12 +68,29 @@ p {
     align-items: center;/*centra los elementos */
     box-sizing: border-box;
 }
+
 .tarjeta-de-mokepon img {
     width: 124px;
 }
 
+.contrincantes{
+    display: flex;
+    border: 2px solid black;
+    border-radius: 10px;
+    background: #ffffffaf;
+}
+
+.vs {
+    font-size: 42px;
+    padding-top: 70px;
+}
+
 input{
     display: none; /*se vualve invisible */
+}
+
+input:checked + label {
+    background-color: #eb5b00;
 }
 
 button{
@@ -79,7 +103,7 @@ button{
     margin-top: 30px;/*tamaño de la margen de la parte arriba*/
     margin-left: 5px;/*tamaño de la margen de la parte de la izquierda*/
     margin-right: 10px;/*tamaño de la margen de la parte parte de la deracha*/
-    margin-bottom: 35px;/*tamaño de la margen de la parte de abajo*/
+    margin-bottom: 10px;/*tamaño de la margen de la parte de abajo*/
     font-family: "Jaro", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -87,9 +111,53 @@ button{
     font-size: 16px;
     box-sizing: border-box;
 }
+
 #seleccionar-ataque {
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
+}
+
+#mensajes {
+    background: #6492527e;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 15px;
+    box-sizing: border-box;
+}
+
+#resultado{
+    color: white;
+}
+
+.ataques{
+    display: grid;
+    grid-template-columns: 100px 100px;
+/*     gap: 500px; funciona para separar columnas y filas*/
+}
+
+#vidas-jugador, #vidas-enemigo {
+    font-size: 32px;
+    margin-bottom: 0px;
+}
+
+.ataques-jugador, .ataques-enemigo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px solid blue;
+    color: blue;
+}
+
+.ataques-enemigo {
+    border: 5px solid red;
+    color: red;
+}
+
+@media (max-width: 400px){
+    .tarjetas {
+        flex-direction: column;
+    }
 }
 /*modelo de caja*/

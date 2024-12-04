@@ -40,13 +40,25 @@ function seleccionarMascotaJugador() {
     let inputCapipepo = document.getElementById('capipepo')
     let inputRatigueya = document.getElementById('ratigueya')
     let spanMascotaJugador = document.getElementById('mascota-jugador')
+
+    let imagenHipodogue = document.createElement('img')
+    imagenHipodogue.src = "../assets/mokepons_mokepon_hipodoge_attack.png"
+    let imagenCapipepo = document.createElement('img')
+    imagenCapipepo.src = "../assets/mokepons_mokepon_capipepo_attack.png"
+    let imagenRatigueya = document.createElement('img')
+    imagenRatigueya.src = "../assets/mokepons_mokepon_ratigueya_attack.png"
+    let insertMacotaJugador = document.getElementById('insertar-mascota-jugador')
+
     
     if (inputHipodoge.checked) {
         spanMascotaJugador.innerHTML = 'Hipodoge'
+        insertMacotaJugador.appendChild(imagenHipodogue)
     } else if (inputCapipepo.checked) {
         spanMascotaJugador.innerHTML = 'Capipepo'
+        insertMacotaJugador.appendChild(imagenCapipepo)
     } else if (inputRatigueya.checked) {
         spanMascotaJugador.innerHTML = 'Ratigueya'
+        insertMacotaJugador.appendChild(imagenRatigueya)
     } else {
         alert('Selecciona una mascota')
     }
@@ -59,13 +71,24 @@ function seleccionarMascotaJugador() {
 function seleccionarMascotaEnemigo() {
     let mascotaAleatoria = aleatorio(1,3)
     let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
+    let insertMascotaEnemigo = document.getElementById('insertar-mascota-enemigo')
+
+    let imagenHipodogueEnemigo = document.createElement('img')
+    imagenHipodogueEnemigo.src = "../assets/mokepons_mokepon_hipodoge_attack.png"
+    let imagenCapipepoEnemigo = document.createElement('img')
+    imagenCapipepoEnemigo.src = "../assets/mokepons_mokepon_capipepo_attack.png"
+    let imagenRatigueyaEnemigo = document.createElement('img')
+    imagenRatigueyaEnemigo.src = "../assets/mokepons_mokepon_ratigueya_attack.png"
 
     if (mascotaAleatoria == 1) {
         spanMascotaEnemigo.innerHTML = 'Hipodoge'
+        insertMascotaEnemigo.appendChild(imagenHipodogueEnemigo)
     } else if (mascotaAleatoria == 2) {
         spanMascotaEnemigo.innerHTML = 'Capipepo'
+        insertMascotaEnemigo.appendChild(imagenCapipepoEnemigo)
     } else {
         spanMascotaEnemigo.innerHTML = 'Ratigueya'
+        insertMascotaEnemigo.appendChild(imagenRatigueyaEnemigo)
     }
 }
 //ataque de fuego
@@ -104,26 +127,34 @@ function combate() {
     let spanVidasJugador = document.getElementById('vidas-jugador')
     let spanVidasEnemigo = document.getElementById('vidas-enemigo')
     
-    if ( ataqueEnemigo == ataqueJugador){
-        crearMensaje("EMPATE!!!!!");
-      } else if((ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra') || (ataqueJugador == 'Agua' && ataqueEnemigo == 'Fuego') || (ataqueJugador == 'Tierra' && ataqueEnemigo == 'Agua')){
-        crearMensaje("GANASTE🎉!!!!!");
-        vidasEnemigo--; // llama a la variable global vidasEnemigo y le resta 1
-        
-        spanVidasEnemigo.innerHTML = vidasEnemigo; // llama a la variable y le asigna el nuevo valor de la variable global
-      } else {
-        crearMensaje("PERDISTE🙁");
-        vidasJugador--;
-        spanVidasJugador.innerHTML = vidasJugador;
-      }
+    if(ataqueEnemigo == ataqueJugador) {
+        crearMensaje("💥EMPATE💥")
+    } else if(ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA') {
+        crearMensaje("🥳GANASTE🎉")
+        vidasEnemigo--// llama a la variable global vidasEnemigo y le resta 1
+        spanVidasEnemigo.innerHTML = vidasEnemigo
+    } else if(ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO') {
+        crearMensaje("🥳GANASTE🎉")
+        vidasEnemigo-- // llama a la variable global vidasEnemigo y le resta 1
+        spanVidasEnemigo.innerHTML = vidasEnemigo
+    } else if(ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA') {
+        crearMensaje("🥳GANASTE🎉")
+        vidasEnemigo-- // llama a la variable global vidasEnemigo y le resta 1
+        spanVidasEnemigo.innerHTML = vidasEnemigo
+    } else {
+        crearMensaje("🙁PERDISTE📉")
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador
+    }
+
     revisarVidas()
 }
 
 function revisarVidas() {
     if (vidasEnemigo == 0) {
-        crearMensajeFinal("FELICITACIONES! Ganaste :)")
+        crearMensajeFinal("FELICITACIONES! Ganaste 🥳🎉")
     } else if (vidasJugador == 0) {
-        crearMensajeFinal('Lo siento, perdiste :(')
+        crearMensajeFinal('Lo siento, PERDISTE 🙁📉')
     }
 }
 // crear resultado del combate
