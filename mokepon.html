@@ -1,71 +1,64 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>MOKEPON</title>
+        <meta charset="utf-8" />
+        <title>MOKEPON!</title>
         <script src="./js/mokepon.js"></script>
         <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
         <section id="seleccionar-mascota">
-            <h1 class="titulo">🌱💧🔥MOKEPON!🔥💧🌱</h1>
+            <h1 class="titulo">Mokepon</h1>
 
-            <h2 class="subtitulo">Elije tu mascota:</h2>
-            
-            <div class="etiqueta">
+            <h2 class="subtitulo">Elige tu mascota:</h2>
 
+            <div class="tarjetas">
                 <label class="tarjeta-de-mokepon" for="hipodoge">
-                    <p>hipodoge</p>
-                    <img src="./assets/mokepons_mokepon_hipodoge_attack.png" alt="hipodoge">
+                    <p>Hipodoge</p>
+                    <img src="./assets/mokepons_mokepon_hipodoge_attack.png" alt="Hipodoge">
                 </label>
-                <input type="radio" name="mascota" id="hipodoge"/>
-    
+                <input type="radio" name="mascota" id="hipodoge" />
+                
                 <label class="tarjeta-de-mokepon" for="capipepo">
                     <p>Capipepo</p>
-                    <img src="./assets/mokepons_mokepon_capipepo_attack.png" alt="capipepo">
+                    <img src="./assets/mokepons_mokepon_capipepo_attack.png" alt="Capipepo">
                 </label>
-                <input type="radio"name="mascota" id="capipepo"/>
-    
+                <input type="radio" name="mascota" id="capipepo" />
+                
                 <label class="tarjeta-de-mokepon" for="ratigueya">
                     <p>Ratigueya</p>
-                    <img src="./assets/mokepons_mokepon_ratigueya_attack.png" alt="ratigueya">
+                    <img src="./assets/mokepons_mokepon_ratigueya_attack.png" alt="Ratigueya">
                 </label>
-                <input type="radio" name="mascota" id="ratigueya"/>
-
+                <input type="radio" name="mascota" id="ratigueya" />
             </div>
 
-            <button id="boton-mascota">Continuar</button>   
-
+            <button id="boton-mascota">Seleccionar</button>
         </section>
 
-
         <section id="seleccionar-ataque">
-            <h1 class="titulo">🌱💧🔥MOKEPON!🔥💧🌱</h1>
+            <h1 class="titulo">Mokepon</h1>
 
             <h2 class="subtitulo">Elige tu ataque:</h2>
-        
+
             <div>
-            
-                <button id="boton-fuego" class="boton-de-fuego">Fuego🔥</button>
-                <button id="boton-agua" class="boton-de-agua">Agua💧</button>
-                <button id="boton-tierra" class="boton-de-tierra">Tierra🌱</button>
+                <button id="boton-fuego" class="boton-de-ataque">Fuego 🔥</button>
+                <button id="boton-agua" class="boton-de-ataque">Agua 💧</button>
+                <button id="boton-tierra" class="boton-de-ataque">Tierra 🌱</button>
+            </div>
 
-            </div>    
-        
-            <div id="mensaje">
-
-                <div id="resultado">hola</div>
+            <div id="mensajes">
+                <div id="resultado">Mucha suerte</div>
 
                 <section id="reiniciar">
                     <button id="boton-reiniciar">Reiniciar</button>
                 </section>
             </div>
-                
+
             <div>
-                <div id="ataque-del-jugador"></div>
-                <div id="ataque-del-enemigo"></div>
-                <p><span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p><!--Ele contenedor espan general mente no tiene un valor semantico, pero es usado para dar stilos u atributos aislandola del texto-->
-                <p><span id="mascota-enemigo"></span> tiene <span id="vidas-enemigo">3</span> vidas</p>
+                <div id="ataques-del-jugador"></div>
+                <div id="ataques-del-enemigo"></div>
+                <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
+                <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
             </div>
         </section>
     </body>

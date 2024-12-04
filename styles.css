@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Protest+Revolution&display=swap');
-
+/* 🌱💧🔥MOKEPON!🔥💧🌱 */
 
 *{
     margin: 0px;
@@ -44,7 +44,7 @@ p {
     box-sizing: border-box;
 }
 
-.etiqueta{
+.tarjetas{
     display: flex;/*es una propieda que nos ayuda a organizar o manipular mejor los elementos*/
 }
 
